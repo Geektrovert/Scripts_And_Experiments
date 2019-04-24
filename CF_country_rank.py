@@ -134,7 +134,6 @@ def getInstitute(httpResponse):
 
 
 def getInfo(handle):
-    print("Crawling info of " + handle + "...")
     name = ""
     institute = ""
     url = "https://codeforces.com/profile/" + handle
@@ -172,12 +171,13 @@ def parseContest(contestId):
         )
         if len(countryRankList) >= 5:
             break
-    print("done")
-    limit = min(5, len(countryRankList))
+    print("done\n")
+    limit = min(10, len(countryRankList))
+    print("Top " + str(limit) + " Ranks for Bangladesh in contest " + str(contestId))
     for i in range(limit):
         rank, handle = countryRankList[i]
-        countryRow = str(i + 1) + " (" + rank + "). " + handle + getInfo(handle)
-        print(countryRow + "\n")
+        countryRow = str(i + 1) + ": (" + rank + ") " + handle + getInfo(handle)
+        print(countryRow)
 
 
 def main(argv):
@@ -196,8 +196,6 @@ def main(argv):
             contestID = arg
         elif opt in ("-c", "--country_name"):
             countryName = arg
-    print("ContestID: ", contestID)
-    print("CountryName: ", countryName)
 
     parseContest(contestID)
 
