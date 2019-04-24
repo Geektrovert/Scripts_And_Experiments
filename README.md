@@ -1,6 +1,6 @@
 # Random Code Scripts
 
-* [CF_country_rank.py](/blob/master/CF_country_rank.py) : A command-line utility to see top contestants from a country in a CodeForces online programming contest.
+* [CF_country_rank.py](/CF_country_rank.py) : A command-line utility to see top contestants from a country in a CodeForces online programming contest.
 
    To run:
 
